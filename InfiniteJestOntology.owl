@@ -1,0 +1,128 @@
+Prefix(:=<http://www.semanticweb.org/InfiniteJestOntology#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://www.semanticweb.org/InfiniteJestOntology>
+
+Declaration(Class(:Big_Buddies))
+Declaration(Class(:Les_Assassins_en_Fauteuils_Roulants))
+Declaration(Class(:Miscellaneous_characters))
+Declaration(Class(:Office_for_Unspecified_Services))
+Declaration(Class(:The_Enfield_Tennis_Academy))
+Declaration(Class(:The_Ennet_House_Drug_and_Alcohol_Recovery_House))
+Declaration(Class(:The_Incandenza_Family))
+Declaration(NamedIndividual(:Avril_Incandenza))
+Declaration(NamedIndividual(:Donald_W._Gately))
+Declaration(NamedIndividual(:Dr._Charles_Tavis))
+Declaration(NamedIndividual(:Dr._James_Orin_Incandenza))
+Declaration(NamedIndividual(:Hal_Incandenza))
+Declaration(NamedIndividual(:Hugh_Steeply))
+Declaration(NamedIndividual(:Jim_Troeltsch))
+Declaration(NamedIndividual(:Joelle_Van_Dyne))
+Declaration(NamedIndividual(:Ken_Erdedy))
+Declaration(NamedIndividual(:Mario_Incandenza))
+Declaration(NamedIndividual(:Medical_Attache))
+Declaration(NamedIndividual(:Michael_Pemulis))
+Declaration(NamedIndividual(:Orin_Incandenza))
+Declaration(NamedIndividual(:Poor_Tony_Krause))
+Declaration(NamedIndividual(:Randy_Lenz))
+Declaration(NamedIndividual(:Remy_Marathe))
+Declaration(NamedIndividual(:Tiny_Ewell))
+Declaration(NamedIndividual(:_Stice))
+############################
+#   Classes
+############################
+
+# Class: :Big_Buddies (:Big_Buddies)
+
+SubClassOf(:Big_Buddies :The_Enfield_Tennis_Academy)
+
+
+############################
+#   Named Individuals
+############################
+
+# Individual: :Avril_Incandenza (:Avril_Incandenza)
+
+ClassAssertion(:The_Incandenza_Family :Avril_Incandenza)
+ClassAssertion(owl:Thing :Avril_Incandenza)
+
+# Individual: :Donald_W._Gately (:Donald_W._Gately)
+
+ClassAssertion(:The_Ennet_House_Drug_and_Alcohol_Recovery_House :Donald_W._Gately)
+
+# Individual: :Dr._Charles_Tavis (:Dr._Charles_Tavis)
+
+ClassAssertion(:The_Enfield_Tennis_Academy :Dr._Charles_Tavis)
+ClassAssertion(:The_Incandenza_Family :Dr._Charles_Tavis)
+
+# Individual: :Dr._James_Orin_Incandenza (:Dr._James_Orin_Incandenza)
+
+ClassAssertion(:The_Incandenza_Family :Dr._James_Orin_Incandenza)
+
+# Individual: :Hal_Incandenza (:Hal_Incandenza)
+
+ClassAssertion(:The_Incandenza_Family :Hal_Incandenza)
+ClassAssertion(owl:Thing :Hal_Incandenza)
+
+# Individual: :Hugh_Steeply (:Hugh_Steeply)
+
+ClassAssertion(:Office_for_Unspecified_Services :Hugh_Steeply)
+
+# Individual: :Jim_Troeltsch (:Jim_Troeltsch)
+
+ClassAssertion(:Big_Buddies :Jim_Troeltsch)
+ClassAssertion(:The_Enfield_Tennis_Academy :Jim_Troeltsch)
+
+# Individual: :Joelle_Van_Dyne (:Joelle_Van_Dyne)
+
+ClassAssertion(:Miscellaneous_characters :Joelle_Van_Dyne)
+
+# Individual: :Ken_Erdedy (:Ken_Erdedy)
+
+ClassAssertion(:The_Ennet_House_Drug_and_Alcohol_Recovery_House :Ken_Erdedy)
+
+# Individual: :Mario_Incandenza (:Mario_Incandenza)
+
+ClassAssertion(:The_Incandenza_Family :Mario_Incandenza)
+ClassAssertion(owl:Thing :Mario_Incandenza)
+
+# Individual: :Medical_Attache (:Medical_Attache)
+
+ClassAssertion(:Miscellaneous_characters :Medical_Attache)
+
+# Individual: :Michael_Pemulis (:Michael_Pemulis)
+
+ClassAssertion(:The_Enfield_Tennis_Academy :Michael_Pemulis)
+
+# Individual: :Orin_Incandenza (:Orin_Incandenza)
+
+ClassAssertion(:The_Incandenza_Family :Orin_Incandenza)
+ClassAssertion(owl:Thing :Orin_Incandenza)
+
+# Individual: :Poor_Tony_Krause (:Poor_Tony_Krause)
+
+ClassAssertion(:Miscellaneous_characters :Poor_Tony_Krause)
+
+# Individual: :Randy_Lenz (:Randy_Lenz)
+
+ClassAssertion(:The_Ennet_House_Drug_and_Alcohol_Recovery_House :Randy_Lenz)
+
+# Individual: :Remy_Marathe (:Remy_Marathe)
+
+ClassAssertion(:Les_Assassins_en_Fauteuils_Roulants :Remy_Marathe)
+
+# Individual: :Tiny_Ewell (:Tiny_Ewell)
+
+ClassAssertion(:The_Ennet_House_Drug_and_Alcohol_Recovery_House :Tiny_Ewell)
+
+# Individual: :_Stice (:_Stice)
+
+ClassAssertion(:The_Enfield_Tennis_Academy :_Stice)
+
+
+)
