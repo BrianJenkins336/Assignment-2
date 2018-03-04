@@ -8,121 +8,276 @@ Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 
 Ontology(<http://www.semanticweb.org/InfiniteJestOntology>
 
-Declaration(Class(:Big_Buddies))
+Declaration(Class(:Addiction))
+Declaration(Class(:Avril_Incandenza))
+Declaration(Class(:Charles_Tavis))
+Declaration(Class(:Communication))
+Declaration(Class(:Consumption))
+Declaration(Class(:Don_Gately))
+Declaration(Class(:Don_Gately_Actions))
+Declaration(Class(:Don_Gately_Habits))
+Declaration(Class(:Don_Gately_Quotes))
+Declaration(Class(:Don_Gately_Thoughts))
+Declaration(Class(:Dr._James_Orin_Incandenza))
+Declaration(Class(:Hal-Incandenza_Habits))
+Declaration(Class(:Hal_Incandenza))
+Declaration(Class(:Hal_Incandenza_Actions))
+Declaration(Class(:Hal_Incandenza_Quotes))
+Declaration(Class(:Hal_Incandenza_Thoughts))
 Declaration(Class(:Les_Assassins_en_Fauteuils_Roulants))
+Declaration(Class(:Mario_Incandenza))
 Declaration(Class(:Miscellaneous_characters))
 Declaration(Class(:Office_for_Unspecified_Services))
+Declaration(Class(:Orin_Incandenza))
+Declaration(Class(:Remy_Marathe))
+Declaration(Class(:Remy_Marathe_Actions))
+Declaration(Class(:Remy_Marathe_Habits))
+Declaration(Class(:Remy_Marathe_Quotes))
+Declaration(Class(:Remy_Marathe_Thoughts))
 Declaration(Class(:The_Enfield_Tennis_Academy))
 Declaration(Class(:The_Ennet_House_Drug_and_Alcohol_Recovery_House))
+Declaration(Class(:The_Entertainment))
 Declaration(Class(:The_Incandenza_Family))
-Declaration(NamedIndividual(:Avril_Incandenza))
-Declaration(NamedIndividual(:Donald_W._Gately))
-Declaration(NamedIndividual(:Dr._Charles_Tavis))
-Declaration(NamedIndividual(:Dr._James_Orin_Incandenza))
-Declaration(NamedIndividual(:Hal_Incandenza))
-Declaration(NamedIndividual(:Hugh_Steeply))
-Declaration(NamedIndividual(:Jim_Troeltsch))
-Declaration(NamedIndividual(:Joelle_Van_Dyne))
-Declaration(NamedIndividual(:Ken_Erdedy))
-Declaration(NamedIndividual(:Mario_Incandenza))
-Declaration(NamedIndividual(:Medical_Attache))
-Declaration(NamedIndividual(:Michael_Pemulis))
-Declaration(NamedIndividual(:Orin_Incandenza))
-Declaration(NamedIndividual(:Poor_Tony_Krause))
-Declaration(NamedIndividual(:Randy_Lenz))
-Declaration(NamedIndividual(:Remy_Marathe))
-Declaration(NamedIndividual(:Tiny_Ewell))
-Declaration(NamedIndividual(:_Stice))
+Declaration(Class(:Themes))
+Declaration(Class(:Trauma))
+Declaration(Class(<http://www.semanticweb.org/InfiniteJestOntology#Freedom/Limits>))
+Declaration(Class(<http://www.semanticweb.org/InfiniteJestOntology#Hugh/Helen_Steeply>))
+Declaration(Class(<http://www.semanticweb.org/InfiniteJestOntology#Hugh/Helen_Steeply_Actions>))
+Declaration(Class(<http://www.semanticweb.org/InfiniteJestOntology#Hugh/Helen_Steeply_Habits>))
+Declaration(Class(<http://www.semanticweb.org/InfiniteJestOntology#Hugh/Helen_Steeply_Quotes>))
+Declaration(Class(<http://www.semanticweb.org/InfiniteJestOntology#Hugh/Helen_Steeply_Thoughts>))
+Declaration(ObjectProperty(:Communicative))
+Declaration(ObjectProperty(:Consumption))
+Declaration(ObjectProperty(:Free))
+Declaration(ObjectProperty(:HasFather))
+Declaration(ObjectProperty(:Incommunicative))
+Declaration(ObjectProperty(:SubClassOf))
+Declaration(ObjectProperty(:Unfree))
+Declaration(ObjectProperty(:dead))
+Declaration(ObjectProperty(:hasAddiction))
+Declaration(ObjectProperty(:hasBirthMother))
+Declaration(ObjectProperty(:hasTrauma))
+Declaration(ObjectProperty(:isBirthMotherOf))
+Declaration(ObjectProperty(:isFatherTo))
+Declaration(ObjectProperty(:marriedto))
+Declaration(NamedIndividual(:Addiction))
+Declaration(NamedIndividual(:Communication))
+Declaration(NamedIndividual(:Consumption))
+Declaration(NamedIndividual(:Trauma))
+Declaration(NamedIndividual(<http://www.semanticweb.org/InfiniteJestOntology#Freedom/Limits>))
+Declaration(NamedIndividual(<http://www.semanticweb.org/InfiniteJestOntology#Head/Brain/Thinking>))
+
+############################
+#   Object Properties
+############################
+
+# Object Property: :Consumption (:Consumption)
+
+AnnotationAssertion(rdfs:comment :Consumption "Closely aligned with addiction, but not categoricially addicition, consumption refers to the consumptive habits someone has while still being functional. Basically the difference between addiction and consumption is the difference between a non functioning addict vs. a functioning addict respectively.")
+
+# Object Property: :HasFather (:HasFather)
+
+InverseObjectProperties(:HasFather :isFatherTo)
+
+# Object Property: :hasBirthMother (:hasBirthMother)
+
+InverseObjectProperties(:hasBirthMother :isBirthMotherOf)
+
+
+
 ############################
 #   Classes
 ############################
 
-# Class: :Big_Buddies (:Big_Buddies)
+# Class: :Addiction (:Addiction)
 
-SubClassOf(:Big_Buddies :The_Enfield_Tennis_Academy)
+AnnotationAssertion(rdfs:comment :Addiction "Closely related to addiction, this is the category for those who are not functional in their consumptive habits. Almost everyone is an addict in the novel, but some are functional and others are not, or have instances where they were not.")
+SubClassOf(:Addiction :Themes)
 
+# Class: :Avril_Incandenza (:Avril_Incandenza)
 
-############################
-#   Named Individuals
-############################
+AnnotationAssertion(rdfs:comment :Avril_Incandenza "Mother of the Incandenzas")
+EquivalentClasses(:Avril_Incandenza ObjectAllValuesFrom(:isBirthMotherOf :Hal_Incandenza))
+EquivalentClasses(:Avril_Incandenza ObjectAllValuesFrom(:isBirthMotherOf :Mario_Incandenza))
+EquivalentClasses(:Avril_Incandenza ObjectAllValuesFrom(:isBirthMotherOf :Orin_Incandenza))
+SubClassOf(:Avril_Incandenza :The_Incandenza_Family)
 
-# Individual: :Avril_Incandenza (:Avril_Incandenza)
+# Class: :Charles_Tavis (:Charles_Tavis)
 
-ClassAssertion(:The_Incandenza_Family :Avril_Incandenza)
-ClassAssertion(owl:Thing :Avril_Incandenza)
+AnnotationAssertion(rdfs:comment :Charles_Tavis "“C.T.”. He is the Uncle of Hal Incandenza (See Above), Mario Incandenza (See Above), and Orin Incandenza (See Above), and is their mother, Avril Incandenza’s (See Above), adoptive brother. Once James Incandenza (See Above) dies, Charles becomes the Headmaster of Enfield Tennis Academy. He often ponders whether James’s sons like him for replacing their father at the academy, and Charles is so weirded out by the physical appearance of Mario that he leaves the room if Mario enters. Whilst at the academy, Charles achieves Total Worry, and is in charge of all the scheduling (which often keeps him up at night). It is speculated that he and Avril are sexually intimate, and that he is the father of Mario. (Source: http://bit.ly/2H404ZF)")
+SubClassOf(:Charles_Tavis :The_Incandenza_Family)
 
-# Individual: :Donald_W._Gately (:Donald_W._Gately)
+# Class: :Communication (:Communication)
 
-ClassAssertion(:The_Ennet_House_Drug_and_Alcohol_Recovery_House :Donald_W._Gately)
+AnnotationAssertion(rdfs:comment :Communication "Infinite Jest uses communication, or not communicating, as an example of the isolation of the self from others, or integration with others, and how this we find ourself in another human being.")
+SubClassOf(:Communication :Themes)
 
-# Individual: :Dr._Charles_Tavis (:Dr._Charles_Tavis)
+# Class: :Consumption (:Consumption)
 
-ClassAssertion(:The_Enfield_Tennis_Academy :Dr._Charles_Tavis)
-ClassAssertion(:The_Incandenza_Family :Dr._Charles_Tavis)
+SubClassOf(:Consumption :Themes)
 
-# Individual: :Dr._James_Orin_Incandenza (:Dr._James_Orin_Incandenza)
+# Class: :Don_Gately (:Don_Gately)
 
-ClassAssertion(:The_Incandenza_Family :Dr._James_Orin_Incandenza)
+AnnotationAssertion(rdfs:comment :Don_Gately "A former thief and Demerol addict, and current counselor in residence at the Ennet House. One of the novel's primary characters, Gately is physically enormous, an avid Alcoholics Anonymous member, and intricately (though not obviously) connected to both the Enfield Tennis Academy and the international struggle to seize the master copy of the Entertainment. During his middle-school and high-school years, Gately's size rendered him a formidable football talent, and he excelled in both offensive and defensive capacities. Gately is known for his toothbrush-in-ass tactic (an outrageous scene that was a favorite at public Wallace readings) and is the accidental murderer of M. DuPlessis, a leader of one of the many separatist Quebecois organizations and a samizdat conspirator. Gately, like Ortho Stice, is visited by the ghost of James O. Incandenza. (Source: http://bit.ly/2oF5Ny2)")
+SubClassOf(:Don_Gately :The_Ennet_House_Drug_and_Alcohol_Recovery_House)
 
-# Individual: :Hal_Incandenza (:Hal_Incandenza)
+# Class: :Don_Gately_Actions (:Don_Gately_Actions)
 
-ClassAssertion(:The_Incandenza_Family :Hal_Incandenza)
-ClassAssertion(owl:Thing :Hal_Incandenza)
+AnnotationAssertion(rdfs:comment :Don_Gately_Actions "Actions from Don Gately")
+SubClassOf(:Don_Gately_Actions :Don_Gately)
 
-# Individual: :Hugh_Steeply (:Hugh_Steeply)
+# Class: :Don_Gately_Habits (:Don_Gately_Habits)
 
-ClassAssertion(:Office_for_Unspecified_Services :Hugh_Steeply)
+AnnotationAssertion(rdfs:comment :Don_Gately_Habits "Habits from Don Gately")
+SubClassOf(:Don_Gately_Habits :Don_Gately)
 
-# Individual: :Jim_Troeltsch (:Jim_Troeltsch)
+# Class: :Don_Gately_Quotes (:Don_Gately_Quotes)
 
-ClassAssertion(:Big_Buddies :Jim_Troeltsch)
-ClassAssertion(:The_Enfield_Tennis_Academy :Jim_Troeltsch)
+AnnotationAssertion(rdfs:comment :Don_Gately_Quotes "Quotes from Don Gately")
+SubClassOf(:Don_Gately_Quotes :Don_Gately)
 
-# Individual: :Joelle_Van_Dyne (:Joelle_Van_Dyne)
+# Class: :Don_Gately_Thoughts (:Don_Gately_Thoughts)
 
-ClassAssertion(:Miscellaneous_characters :Joelle_Van_Dyne)
+AnnotationAssertion(rdfs:comment :Don_Gately_Thoughts "Thoughts from Don Gately")
+SubClassOf(:Don_Gately_Thoughts :Don_Gately)
 
-# Individual: :Ken_Erdedy (:Ken_Erdedy)
+# Class: :Dr._James_Orin_Incandenza (:Dr._James_Orin_Incandenza)
 
-ClassAssertion(:The_Ennet_House_Drug_and_Alcohol_Recovery_House :Ken_Erdedy)
+AnnotationAssertion(rdfs:comment :Dr._James_Orin_Incandenza "Father of the Incandenzas and creator of The Entertainment")
+EquivalentClasses(:Dr._James_Orin_Incandenza ObjectSomeValuesFrom(:marriedto :Avril_Incandenza))
+EquivalentClasses(:Dr._James_Orin_Incandenza ObjectAllValuesFrom(:dead :Dr._James_Orin_Incandenza))
+SubClassOf(:Dr._James_Orin_Incandenza :The_Incandenza_Family)
 
-# Individual: :Mario_Incandenza (:Mario_Incandenza)
+# Class: :Hal-Incandenza_Habits (:Hal-Incandenza_Habits)
 
-ClassAssertion(:The_Incandenza_Family :Mario_Incandenza)
-ClassAssertion(owl:Thing :Mario_Incandenza)
+AnnotationAssertion(rdfs:comment :Hal-Incandenza_Habits "Habits from Hal Incandenza")
+SubClassOf(:Hal-Incandenza_Habits :Hal_Incandenza)
 
-# Individual: :Medical_Attache (:Medical_Attache)
+# Class: :Hal_Incandenza (:Hal_Incandenza)
 
-ClassAssertion(:Miscellaneous_characters :Medical_Attache)
+AnnotationAssertion(rdfs:comment :Hal_Incandenza "is the youngest of the Incandenza children and arguably the protagonist of the novel, the events of which take place largely during his senior year at ETA. Hal is as prodigiously intelligent and talented as the other members of his family, but insecure about his abilities (and eventually his mental state). He has a difficult relationship with both his parents. He reads the Oxford English Dictionary and like his mother often corrects the grammar of his friends and family. Hal's mental degradation and alienation from those around him culminate in his chronologically last appearance in the novel, in which all of his attempts at speech appear to others as uncontrolled screaming. The origin of Hal's final condition is unclear. One possibility is that the mold Hal ingested as a child developed into a hallucinogenic drug known as DMZ, with Hal's marijuana withdrawal serving as a catalyst; alternatively, his friend Michael Pemulis (or another Academy resident) may have doped his toothbrush with that drug. An accidental viewing of the titular film is another possible cause. It is also possible that Hal was subjected to a \"Technical Interview\", as was his older brother Orin. (Source: http://bit.ly/2oF5Ny2)")
+EquivalentClasses(:Hal_Incandenza ObjectAllValuesFrom(:HasFather :Dr._James_Orin_Incandenza))
+EquivalentClasses(:Hal_Incandenza ObjectAllValuesFrom(:hasBirthMother :Avril_Incandenza))
+SubClassOf(:Hal_Incandenza :The_Incandenza_Family)
 
-# Individual: :Michael_Pemulis (:Michael_Pemulis)
+# Class: :Hal_Incandenza_Actions (:Hal_Incandenza_Actions)
 
-ClassAssertion(:The_Enfield_Tennis_Academy :Michael_Pemulis)
+AnnotationAssertion(rdfs:comment :Hal_Incandenza_Actions "Actions from Hal Incandenza")
+SubClassOf(:Hal_Incandenza_Actions :Hal_Incandenza)
 
-# Individual: :Orin_Incandenza (:Orin_Incandenza)
+# Class: :Hal_Incandenza_Quotes (:Hal_Incandenza_Quotes)
 
-ClassAssertion(:The_Incandenza_Family :Orin_Incandenza)
-ClassAssertion(owl:Thing :Orin_Incandenza)
+AnnotationAssertion(rdfs:comment :Hal_Incandenza_Quotes "Quotes from Hal Incandenza")
+SubClassOf(:Hal_Incandenza_Quotes :Hal_Incandenza)
 
-# Individual: :Poor_Tony_Krause (:Poor_Tony_Krause)
+# Class: :Hal_Incandenza_Thoughts (:Hal_Incandenza_Thoughts)
 
-ClassAssertion(:Miscellaneous_characters :Poor_Tony_Krause)
+AnnotationAssertion(rdfs:comment :Hal_Incandenza_Thoughts "Thoughts from Hal Incandenza")
+SubClassOf(:Hal_Incandenza_Thoughts :Hal_Incandenza)
 
-# Individual: :Randy_Lenz (:Randy_Lenz)
+# Class: :Les_Assassins_en_Fauteuils_Roulants (:Les_Assassins_en_Fauteuils_Roulants)
 
-ClassAssertion(:The_Ennet_House_Drug_and_Alcohol_Recovery_House :Randy_Lenz)
+AnnotationAssertion(rdfs:comment :Les_Assassins_en_Fauteuils_Roulants "The A.F.R. (Les Assassins des Fauteuils Rollents, or, in American, the Wheelchair Assassins.; a group of wheelchair-bound separatist assassins who want Canada to secede from America and reject the gift of the Great Convexity. (Source: http://bit.ly/2oFgl0k)")
+DisjointClasses(:Les_Assassins_en_Fauteuils_Roulants :Remy_Marathe)
 
-# Individual: :Remy_Marathe (:Remy_Marathe)
+# Class: :Mario_Incandenza (:Mario_Incandenza)
 
-ClassAssertion(:Les_Assassins_en_Fauteuils_Roulants :Remy_Marathe)
+AnnotationAssertion(rdfs:comment :Mario_Incandenza "Step-sibling to Orin and Hal, son of Avril and Charles Tavis")
+EquivalentClasses(:Mario_Incandenza ObjectAllValuesFrom(:HasFather :Charles_Tavis))
+EquivalentClasses(:Mario_Incandenza ObjectAllValuesFrom(:hasBirthMother :Avril_Incandenza))
+SubClassOf(:Mario_Incandenza :The_Incandenza_Family)
 
-# Individual: :Tiny_Ewell (:Tiny_Ewell)
+# Class: :Miscellaneous_characters (:Miscellaneous_characters)
 
-ClassAssertion(:The_Ennet_House_Drug_and_Alcohol_Recovery_House :Tiny_Ewell)
+AnnotationAssertion(rdfs:comment :Miscellaneous_characters "A group for the classification for people without a designated family or group")
 
-# Individual: :_Stice (:_Stice)
+# Class: :Office_for_Unspecified_Services (:Office_for_Unspecified_Services)
 
-ClassAssertion(:The_Enfield_Tennis_Academy :_Stice)
+AnnotationAssertion(rdfs:comment :Office_for_Unspecified_Services "The United States Office of Unspecified Services (O.U.S.) aims to intercept the master copy to prevent mass dissemination and the destabilization of the Organization of North American Nations, or else to find or produce an anti-entertainment that can counter the film's effects. (Source: http://bit.ly/2oFhC7n)")
+
+# Class: :Orin_Incandenza (:Orin_Incandenza)
+
+AnnotationAssertion(rdfs:comment :Orin_Incandenza "Oldest son of Avril and Dr. James Orin Incandenza")
+EquivalentClasses(:Orin_Incandenza ObjectAllValuesFrom(:HasFather :Dr._James_Orin_Incandenza))
+EquivalentClasses(:Orin_Incandenza ObjectAllValuesFrom(:hasBirthMother :Avril_Incandenza))
+SubClassOf(:Orin_Incandenza :The_Incandenza_Family)
+
+# Class: :Remy_Marathe (:Remy_Marathe)
+
+AnnotationAssertion(rdfs:comment :Remy_Marathe "Member of the Wheelchair Assassins who secretly talks to Hugh/Helen Steeply. Marathe is a quadruple agent: the AFR thinks that he is a triple agent, only pretending to betray the AFR, while Marathe and Steeply know that he only pretends to pretend to betray them. He does this in order to secure medical support for his wife (who was born without a skull) from the Office of Unspecified Services. Late in the novel, Marathe is sent to infiltrate Ennett House in the guise of a Swiss drug addict. (Source: http://bit.ly/2oF5Ny2)")
+SubClassOf(:Remy_Marathe :Les_Assassins_en_Fauteuils_Roulants)
+
+# Class: :Remy_Marathe_Actions (:Remy_Marathe_Actions)
+
+AnnotationAssertion(rdfs:comment :Remy_Marathe_Actions "Actions from Remy Marathe")
+SubClassOf(:Remy_Marathe_Actions :Remy_Marathe)
+
+# Class: :Remy_Marathe_Habits (:Remy_Marathe_Habits)
+
+AnnotationAssertion(rdfs:comment :Remy_Marathe_Habits "Habits from Remy Marathe")
+SubClassOf(:Remy_Marathe_Habits :Remy_Marathe)
+
+# Class: :Remy_Marathe_Quotes (:Remy_Marathe_Quotes)
+
+AnnotationAssertion(rdfs:comment :Remy_Marathe_Quotes "Quotes from Remy Marathe")
+SubClassOf(:Remy_Marathe_Quotes :Remy_Marathe)
+
+# Class: :Remy_Marathe_Thoughts (:Remy_Marathe_Thoughts)
+
+AnnotationAssertion(rdfs:comment :Remy_Marathe_Thoughts "Thoughts from Remy Marathe")
+SubClassOf(:Remy_Marathe_Thoughts :Remy_Marathe)
+
+# Class: :The_Enfield_Tennis_Academy (:The_Enfield_Tennis_Academy)
+
+AnnotationAssertion(rdfs:comment :The_Enfield_Tennis_Academy "Enfield Tennis Academy is an academy dedicated to training its students to be the very best tennis players they can be, and to hopefully continue on to Show. (Source: http://bit.ly/2oGkUHL)")
+
+# Class: :The_Ennet_House_Drug_and_Alcohol_Recovery_House (:The_Ennet_House_Drug_and_Alcohol_Recovery_House)
+
+AnnotationAssertion(rdfs:comment :The_Ennet_House_Drug_and_Alcohol_Recovery_House "Ennet House is a half-way house for drug addicts dedicated to getting each of its residents on the right and clean path through programs such as Alcoholics Anonymous and Narcotics Anonymous. (Source: http://bit.ly/2oExNly)")
+
+# Class: :The_Entertainment (:The_Entertainment)
+
+AnnotationAssertion(rdfs:comment :The_Entertainment "The created tape by Dr. James Orin Incandenza that is so entertaining people will let themselves waste away watching it.")
+
+# Class: :The_Incandenza_Family (:The_Incandenza_Family)
+
+AnnotationAssertion(rdfs:comment :The_Incandenza_Family "The family central whose father created The Entertainment and the rest who live around the Enfield Tennis Academy")
+
+# Class: :Trauma (:Trauma)
+
+AnnotationAssertion(rdfs:comment :Trauma "Infinite Jest uses discussion of trauma to highlight an essential aspect of the human condition and how there is a direct coorelation between addiction and trauma.")
+SubClassOf(:Trauma :Themes)
+
+# Class: <http://www.semanticweb.org/InfiniteJestOntology#Freedom/Limits> (<http://www.semanticweb.org/InfiniteJestOntology#Freedom/Limits>)
+
+AnnotationAssertion(rdfs:comment <http://www.semanticweb.org/InfiniteJestOntology#Freedom/Limits> "Infinite Jest revolves around the American notion of freedom and how this unlimited unfocused freedom can eventually lead to a form of bondage to one's desires. True Freedom comes from setting limits. This category is to outline someone who is free to choose what they want versus who is free to choose what they should want.")
+SubClassOf(<http://www.semanticweb.org/InfiniteJestOntology#Freedom/Limits> :Themes)
+
+# Class: <http://www.semanticweb.org/InfiniteJestOntology#Hugh/Helen_Steeply> (<http://www.semanticweb.org/InfiniteJestOntology#Hugh/Helen_Steeply>)
+
+AnnotationAssertion(rdfs:comment <http://www.semanticweb.org/InfiniteJestOntology#Hugh/Helen_Steeply> "Agent for the Office of Unspecified Services; currently in disguise as a female reporter profiling Orin (Source: http://bit.ly/2oHUyow)")
+SubClassOf(<http://www.semanticweb.org/InfiniteJestOntology#Hugh/Helen_Steeply> :Office_for_Unspecified_Services)
+
+# Class: <http://www.semanticweb.org/InfiniteJestOntology#Hugh/Helen_Steeply_Actions> (<http://www.semanticweb.org/InfiniteJestOntology#Hugh/Helen_Steeply_Actions>)
+
+AnnotationAssertion(rdfs:comment <http://www.semanticweb.org/InfiniteJestOntology#Hugh/Helen_Steeply_Actions> "Actions from Hugh/Helen Steeply")
+SubClassOf(<http://www.semanticweb.org/InfiniteJestOntology#Hugh/Helen_Steeply_Actions> <http://www.semanticweb.org/InfiniteJestOntology#Hugh/Helen_Steeply>)
+
+# Class: <http://www.semanticweb.org/InfiniteJestOntology#Hugh/Helen_Steeply_Habits> (<http://www.semanticweb.org/InfiniteJestOntology#Hugh/Helen_Steeply_Habits>)
+
+AnnotationAssertion(rdfs:comment <http://www.semanticweb.org/InfiniteJestOntology#Hugh/Helen_Steeply_Habits> "Habits from Hugh/Helen Steeply")
+SubClassOf(<http://www.semanticweb.org/InfiniteJestOntology#Hugh/Helen_Steeply_Habits> <http://www.semanticweb.org/InfiniteJestOntology#Hugh/Helen_Steeply>)
+
+# Class: <http://www.semanticweb.org/InfiniteJestOntology#Hugh/Helen_Steeply_Quotes> (<http://www.semanticweb.org/InfiniteJestOntology#Hugh/Helen_Steeply_Quotes>)
+
+AnnotationAssertion(rdfs:comment <http://www.semanticweb.org/InfiniteJestOntology#Hugh/Helen_Steeply_Quotes> "Quotes from Hugh/Helen Steeply")
+SubClassOf(<http://www.semanticweb.org/InfiniteJestOntology#Hugh/Helen_Steeply_Quotes> <http://www.semanticweb.org/InfiniteJestOntology#Hugh/Helen_Steeply>)
+
+# Class: <http://www.semanticweb.org/InfiniteJestOntology#Hugh/Helen_Steeply_Thoughts> (<http://www.semanticweb.org/InfiniteJestOntology#Hugh/Helen_Steeply_Thoughts>)
+
+AnnotationAssertion(rdfs:comment <http://www.semanticweb.org/InfiniteJestOntology#Hugh/Helen_Steeply_Thoughts> "Thoughts from Hugh/Helen Steeply")
+SubClassOf(<http://www.semanticweb.org/InfiniteJestOntology#Hugh/Helen_Steeply_Thoughts> <http://www.semanticweb.org/InfiniteJestOntology#Hugh/Helen_Steeply>)
+
 
 
 )
