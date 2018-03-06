@@ -7,17 +7,21 @@ Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 
 
 Ontology(<http://www.semanticweb.org/InfiniteJestOntology>
-Annotation(rdfs:comment "This ontology's purpose is to identify the major themes of the novel in relation to individual characters' actions, habits, quotes, thoughts.
+Annotation(rdfs:comment "This ontology's purpose is to identify the major themes of the novel in relation to individual actions, habits, quotes, and thoughts of the main characters.
 
-The ontology separates which groups the characters belongs to, what their relations are to one another, and how their individuals actions, habits, quotes, and thoughts relate to the major themes of the book.
+The ontology separates which groups the characters belongs to. This is important for any socio-political interpretations. 
 
-In this way, this enormous book's themes will have a more organized mapping of the novel's themes and how they are touched in through the enormous cast of characters.
+The relations between the characters is important for themes such as communication and trauma.
+
+The structure of the ontology is designed such that the main character's actions, habits, quotes, and thoughts are granular enough to highlight a passage from the book and relating it to one, or more, themes.
 
 Citation: Wallace, D., & Bissell, Tom. (2006). Infinite jest : A novel (Back Bay 10th anniversary pbk. ed.). New York: Back Bay Books.")
 
 Declaration(Class(:Addiction))
+Declaration(Class(:Allusions))
 Declaration(Class(:Avril_Incandenza))
 Declaration(Class(:Charles_Tavis))
+Declaration(Class(:Childhood))
 Declaration(Class(:Communication))
 Declaration(Class(:Communicative))
 Declaration(Class(:Consumption))
@@ -32,6 +36,8 @@ Declaration(Class(:Hal_Incandenza))
 Declaration(Class(:Hal_Incandenza_Actions))
 Declaration(Class(:Hal_Incandenza_Quotes))
 Declaration(Class(:Hal_Incandenza_Thoughts))
+Declaration(Class(:Hamlet))
+Declaration(Class(:Human_development))
 Declaration(Class(:In_thrall))
 Declaration(Class(:Incommunicative))
 Declaration(Class(:Les_Assassins_en_Fauteuils_Roulants))
@@ -39,12 +45,14 @@ Declaration(Class(:Mario_Incandenza))
 Declaration(Class(:Miscellaneous_characters))
 Declaration(Class(:Office_for_Unspecified_Services))
 Declaration(Class(:Orin_Incandenza))
+Declaration(Class(:Re-occurence))
 Declaration(Class(:Recovering))
 Declaration(Class(:Remy_Marathe))
 Declaration(Class(:Remy_Marathe_Actions))
 Declaration(Class(:Remy_Marathe_Habits))
 Declaration(Class(:Remy_Marathe_Quotes))
 Declaration(Class(:Remy_Marathe_Thoughts))
+Declaration(Class(:The_Brothers_Karamazov))
 Declaration(Class(:The_Enfield_Tennis_Academy))
 Declaration(Class(:The_Ennet_House_Drug_and_Alcohol_Recovery_House))
 Declaration(Class(:The_Entertainment))
@@ -57,8 +65,9 @@ Declaration(Class(<http://www.semanticweb.org/InfiniteJestOntology#Hugh/Helen_St
 Declaration(Class(<http://www.semanticweb.org/InfiniteJestOntology#Hugh/Helen_Steeply_Habits>))
 Declaration(Class(<http://www.semanticweb.org/InfiniteJestOntology#Hugh/Helen_Steeply_Quotes>))
 Declaration(Class(<http://www.semanticweb.org/InfiniteJestOntology#Hugh/Helen_Steeply_Thoughts>))
+Declaration(ObjectProperty(:CastPlot_Element-Characteristics))
 Declaration(ObjectProperty(:Communication))
-Declaration(ObjectProperty(:Consumption))
+Declaration(ObjectProperty(:Family))
 Declaration(ObjectProperty(:Free))
 Declaration(ObjectProperty(:HasFather))
 Declaration(ObjectProperty(:SubClassOf))
@@ -67,6 +76,7 @@ Declaration(ObjectProperty(:hasAddiction))
 Declaration(ObjectProperty(:hasBirthMother))
 Declaration(ObjectProperty(:hasBrother))
 Declaration(ObjectProperty(:hasTrauma))
+Declaration(ObjectProperty(:hasfatalpleasure))
 Declaration(ObjectProperty(:isBirthMotherOf))
 Declaration(ObjectProperty(:isFatherTo))
 Declaration(ObjectProperty(:marriedto))
@@ -78,48 +88,98 @@ Declaration(ObjectProperty(:marriedto))
 # Object Property: :Communication (:Communication)
 
 AnnotationAssertion(rdfs:comment :Communication "Communication is a central part of the novel's themes closely relating to addiction and trauma. Characters can range from being overly communicative to the point of saying nothing, literally saying nothing, or clearly articulating things in a concise way. This has been divided to incommunicative and communicative respectively.")
-
-# Object Property: :Consumption (:Consumption)
-
-AnnotationAssertion(rdfs:comment :Consumption "Consumption is closely related to addiction, but the key difference is those with consumptive habits are functioning in society whereas those who are addicited are not.")
+SubObjectPropertyOf(:Communication :CastPlot_Element-Characteristics)
+ObjectPropertyDomain(:Communication :Communication)
+ObjectPropertyDomain(:Communication :The_Enfield_Tennis_Academy)
+ObjectPropertyDomain(:Communication :The_Ennet_House_Drug_and_Alcohol_Recovery_House)
+ObjectPropertyDomain(:Communication :The_Entertainment)
+ObjectPropertyDomain(:Communication :The_Incandenza_Family)
+ObjectPropertyRange(:Communication :Communicative)
+ObjectPropertyRange(:Communication :Incommunicative)
 
 # Object Property: :Free (:Free)
 
 AnnotationAssertion(rdfs:comment :Free "So many characters fall prey to their desires and therefore are not \"truly free\", finding those who can withstand what they want and do what they should is important to theming the characters meaningfully.")
+SubObjectPropertyOf(:Free :CastPlot_Element-Characteristics)
+ObjectPropertyDomain(:Free :Remy_Marathe)
 
 # Object Property: :HasFather (:HasFather)
 
 AnnotationAssertion(rdfs:comment :HasFather "to develop familial connections on the father's side, important for the Incandenza children.")
+SubObjectPropertyOf(:HasFather :Family)
 InverseObjectProperties(:HasFather :isFatherTo)
+ObjectPropertyDomain(:HasFather :The_Incandenza_Family)
 
 # Object Property: :dead (:dead)
 
 AnnotationAssertion(rdfs:comment :dead "Important to note who is dead, especially considering the ghost of Dr. James Orin Incandenza.")
+SubObjectPropertyOf(:dead :CastPlot_Element-Characteristics)
+ObjectPropertyDomain(:dead :Dr._James_Orin_Incandenza)
+ObjectPropertyRange(:dead :Dr._James_Orin_Incandenza)
 
 # Object Property: :hasAddiction (:hasAddiction)
 
 AnnotationAssertion(rdfs:comment :hasAddiction "used to display who has an addiction.")
+SubObjectPropertyOf(:hasAddiction :CastPlot_Element-Characteristics)
+ObjectPropertyDomain(:hasAddiction :Addiction)
+ObjectPropertyDomain(:hasAddiction :The_Enfield_Tennis_Academy)
+ObjectPropertyDomain(:hasAddiction :The_Ennet_House_Drug_and_Alcohol_Recovery_House)
+ObjectPropertyDomain(:hasAddiction :The_Entertainment)
+ObjectPropertyDomain(:hasAddiction :The_Incandenza_Family)
+ObjectPropertyRange(:hasAddiction :In_thrall)
+ObjectPropertyRange(:hasAddiction :Recovering)
 
 # Object Property: :hasBirthMother (:hasBirthMother)
 
 AnnotationAssertion(rdfs:comment :hasBirthMother "to develop familial connections along the mother's side, almost entirely used for the Incandenza children.")
+SubObjectPropertyOf(:hasBirthMother :Family)
 InverseObjectProperties(:hasBirthMother :isBirthMotherOf)
+ObjectPropertyDomain(:hasBirthMother :The_Incandenza_Family)
+
+# Object Property: :hasBrother (:hasBrother)
+
+SubObjectPropertyOf(:hasBrother :Family)
+ObjectPropertyDomain(:hasBrother :The_Incandenza_Family)
+ObjectPropertyRange(:hasBrother :Hal_Incandenza)
+ObjectPropertyRange(:hasBrother :Mario_Incandenza)
+ObjectPropertyRange(:hasBrother :Orin_Incandenza)
 
 # Object Property: :hasTrauma (:hasTrauma)
 
 AnnotationAssertion(rdfs:comment :hasTrauma "Important to connect to characters' experiences of trauma.")
+SubObjectPropertyOf(:hasTrauma :CastPlot_Element-Characteristics)
+ObjectPropertyDomain(:hasTrauma :Les_Assassins_en_Fauteuils_Roulants)
+ObjectPropertyDomain(:hasTrauma :Office_for_Unspecified_Services)
+ObjectPropertyDomain(:hasTrauma :The_Enfield_Tennis_Academy)
+ObjectPropertyDomain(:hasTrauma :The_Ennet_House_Drug_and_Alcohol_Recovery_House)
+ObjectPropertyDomain(:hasTrauma :The_Incandenza_Family)
+ObjectPropertyDomain(:hasTrauma :Trauma)
+
+# Object Property: :hasfatalpleasure (:hasfatalpleasure)
+
+SubObjectPropertyOf(:hasfatalpleasure :CastPlot_Element-Characteristics)
+ObjectPropertyDomain(:hasfatalpleasure :Remy_Marathe)
+ObjectPropertyDomain(:hasfatalpleasure :The_Entertainment)
 
 # Object Property: :isBirthMotherOf (:isBirthMotherOf)
 
 AnnotationAssertion(rdfs:comment :isBirthMotherOf "used to identify the children of a mother.")
+SubObjectPropertyOf(:isBirthMotherOf :Family)
+ObjectPropertyDomain(:isBirthMotherOf :The_Incandenza_Family)
 
 # Object Property: :isFatherTo (:isFatherTo)
 
 AnnotationAssertion(rdfs:comment :isFatherTo "used to identify the children of a father figure.")
+SubObjectPropertyOf(:isFatherTo :Family)
+ObjectPropertyDomain(:isFatherTo :The_Incandenza_Family)
 
 # Object Property: :marriedto (:marriedto)
 
 AnnotationAssertion(rdfs:comment :marriedto "to develop familial connections.")
+SubObjectPropertyOf(:marriedto :Family)
+ObjectPropertyDomain(:marriedto :Avril_Incandenza)
+ObjectPropertyDomain(:marriedto :Dr._James_Orin_Incandenza)
+ObjectPropertyDomain(:marriedto :Remy_Marathe)
 
 
 
@@ -144,7 +204,13 @@ SubClassOf(:Avril_Incandenza :The_Incandenza_Family)
 # Class: :Charles_Tavis (:Charles_Tavis)
 
 AnnotationAssertion(rdfs:comment :Charles_Tavis "“C.T.”. He is the Uncle of Hal Incandenza (See Above), Mario Incandenza (See Above), and Orin Incandenza (See Above), and is their mother, Avril Incandenza’s (See Above), adoptive brother. Once James Incandenza (See Above) dies, Charles becomes the Headmaster of Enfield Tennis Academy. He often ponders whether James’s sons like him for replacing their father at the academy, and Charles is so weirded out by the physical appearance of Mario that he leaves the room if Mario enters. Whilst at the academy, Charles achieves Total Worry, and is in charge of all the scheduling (which often keeps him up at night). It is speculated that he and Avril are sexually intimate, and that he is the father of Mario. (Source: http://bit.ly/2H404ZF)")
+EquivalentClasses(:Charles_Tavis ObjectSomeValuesFrom(:isFatherTo :Mario_Incandenza))
 SubClassOf(:Charles_Tavis :The_Incandenza_Family)
+
+# Class: :Childhood (:Childhood)
+
+AnnotationAssertion(rdfs:comment :Childhood "A lot of trauma has its roots in formative childhood moments.")
+SubClassOf(:Childhood :Trauma)
 
 # Class: :Communication (:Communication)
 
@@ -162,6 +228,7 @@ SubClassOf(:Consumption :Themes)
 # Class: :Don_Gately (:Don_Gately)
 
 AnnotationAssertion(rdfs:comment :Don_Gately "A former thief and Demerol addict, and current counselor in residence at the Ennet House. One of the novel's primary characters, Gately is physically enormous, an avid Alcoholics Anonymous member, and intricately (though not obviously) connected to both the Enfield Tennis Academy and the international struggle to seize the master copy of the Entertainment. During his middle-school and high-school years, Gately's size rendered him a formidable football talent, and he excelled in both offensive and defensive capacities. Gately is known for his toothbrush-in-ass tactic (an outrageous scene that was a favorite at public Wallace readings) and is the accidental murderer of M. DuPlessis, a leader of one of the many separatist Quebecois organizations and a samizdat conspirator. Gately, like Ortho Stice, is visited by the ghost of James O. Incandenza. (Source: http://bit.ly/2oF5Ny2)")
+EquivalentClasses(:Don_Gately ObjectSomeValuesFrom(:hasTrauma :Childhood))
 EquivalentClasses(:Don_Gately ObjectAllValuesFrom(:Communication :Communicative))
 EquivalentClasses(:Don_Gately ObjectAllValuesFrom(:hasAddiction :Recovering))
 SubClassOf(:Don_Gately :The_Ennet_House_Drug_and_Alcohol_Recovery_House)
@@ -189,7 +256,7 @@ SubClassOf(:Don_Gately_Thoughts :Don_Gately)
 # Class: :Dr._James_Orin_Incandenza (:Dr._James_Orin_Incandenza)
 
 AnnotationAssertion(rdfs:comment :Dr._James_Orin_Incandenza "Father of the Incandenzas and creator of The Entertainment")
-EquivalentClasses(:Dr._James_Orin_Incandenza ObjectAllValuesFrom(:dead :Dr._James_Orin_Incandenza))
+EquivalentClasses(:Dr._James_Orin_Incandenza ObjectAllValuesFrom(:dead :Hamlet))
 EquivalentClasses(:Dr._James_Orin_Incandenza ObjectAllValuesFrom(:marriedto :Avril_Incandenza))
 SubClassOf(:Dr._James_Orin_Incandenza :The_Incandenza_Family)
 
@@ -222,6 +289,15 @@ SubClassOf(:Hal_Incandenza_Quotes :Hal_Incandenza)
 
 AnnotationAssertion(rdfs:comment :Hal_Incandenza_Thoughts "Thoughts from Hal Incandenza")
 SubClassOf(:Hal_Incandenza_Thoughts :Hal_Incandenza)
+
+# Class: :Hamlet (:Hamlet)
+
+SubClassOf(:Hamlet :Allusions)
+
+# Class: :Human_development (:Human_development)
+
+AnnotationAssertion(rdfs:comment :Human_development "The novel argues that a person should develop into an adult lest they become stuck in infantile, childish, or immate stages of their life. Closely related to themes of trauma, addiction, and freedom/limits")
+SubClassOf(:Human_development :Themes)
 
 # Class: :In_thrall (:In_thrall)
 
@@ -262,6 +338,11 @@ EquivalentClasses(:Orin_Incandenza ObjectAllValuesFrom(:hasBirthMother :Avril_In
 EquivalentClasses(:Orin_Incandenza ObjectAllValuesFrom(:hasBrother ObjectIntersectionOf(:Hal_Incandenza :Mario_Incandenza)))
 SubClassOf(:Orin_Incandenza :The_Incandenza_Family)
 
+# Class: :Re-occurence (:Re-occurence)
+
+AnnotationAssertion(rdfs:comment :Re-occurence "For renactments of someone's trauma")
+SubClassOf(:Re-occurence :Trauma)
+
 # Class: :Recovering (:Recovering)
 
 AnnotationAssertion(rdfs:comment :Recovering "Those who are addicted but are in control of their desires.")
@@ -269,7 +350,10 @@ SubClassOf(:Recovering :Addiction)
 
 # Class: :Remy_Marathe (:Remy_Marathe)
 
-AnnotationAssertion(rdfs:comment :Remy_Marathe "Member of the Wheelchair Assassins who secretly talks to Hugh/Helen Steeply. Marathe is a quadruple agent: the AFR thinks that he is a triple agent, only pretending to betray the AFR, while Marathe and Steeply know that he only pretends to pretend to betray them. He does this in order to secure medical support for his wife (who was born without a skull) from the Office of Unspecified Services. Late in the novel, Marathe is sent to infiltrate Ennett House in the guise of a Swiss drug addict. (Source: http://bit.ly/2oF5Ny2)")
+AnnotationAssertion(rdfs:comment :Remy_Marathe "Member of the Wheelchair Assassins who secretly talks to Hugh/Helen Steeply. Marathe is a quadruple agent: the AFR thinks that he is a triple agent, only pretending to betray the AFR, while Marathe and Steeply know that he only pretends to pretend to betray them. He does this in order to secure medical support for his wife (who was born without a skull) from the Office of Unspecified Services. Late in the novel, Marathe is sent to infiltrate Ennett House in the guise of a Swiss drug addict. (Source: http://bit.ly/2oF5Ny2)
+
+Remy is perhaps the only character who can be described as truly free, especially when compared to the alternatives.")
+EquivalentClasses(:Remy_Marathe ObjectSomeValuesFrom(:hasfatalpleasure <http://www.semanticweb.org/InfiniteJestOntology#Freedom/Limits>))
 EquivalentClasses(:Remy_Marathe ObjectAllValuesFrom(:Free <http://www.semanticweb.org/InfiniteJestOntology#Freedom/Limits>))
 SubClassOf(:Remy_Marathe :Les_Assassins_en_Fauteuils_Roulants)
 
@@ -293,6 +377,10 @@ SubClassOf(:Remy_Marathe_Quotes :Remy_Marathe)
 AnnotationAssertion(rdfs:comment :Remy_Marathe_Thoughts "Thoughts from Remy Marathe")
 SubClassOf(:Remy_Marathe_Thoughts :Remy_Marathe)
 
+# Class: :The_Brothers_Karamazov (:The_Brothers_Karamazov)
+
+SubClassOf(:The_Brothers_Karamazov :Allusions)
+
 # Class: :The_Enfield_Tennis_Academy (:The_Enfield_Tennis_Academy)
 
 AnnotationAssertion(rdfs:comment :The_Enfield_Tennis_Academy "Enfield Tennis Academy is an academy dedicated to training its students to be the very best tennis players they can be, and to hopefully continue on to Show. (Source: http://bit.ly/2oGkUHL)")
@@ -304,14 +392,12 @@ AnnotationAssertion(rdfs:comment :The_Ennet_House_Drug_and_Alcohol_Recovery_Hous
 # Class: :The_Entertainment (:The_Entertainment)
 
 AnnotationAssertion(rdfs:comment :The_Entertainment "The created tape by Dr. James Orin Incandenza that is so entertaining people will let themselves waste away watching it.")
+EquivalentClasses(:The_Entertainment ObjectSomeValuesFrom(:hasfatalpleasure :Consumption))
+EquivalentClasses(:The_Entertainment ObjectSomeValuesFrom(:hasfatalpleasure :In_thrall))
 
 # Class: :The_Incandenza_Family (:The_Incandenza_Family)
 
 AnnotationAssertion(rdfs:comment :The_Incandenza_Family "The family central whose father created The Entertainment and the rest who live around the Enfield Tennis Academy")
-
-# Class: :Themes (:Themes)
-
-AnnotationAssertion(rdfs:comment :Themes "The themes of Infinite Jest")
 
 # Class: :Trauma (:Trauma)
 
