@@ -85,6 +85,10 @@ Declaration(ObjectProperty(:marriedto))
 #   Object Properties
 ############################
 
+# Object Property: :CastPlot_Element-Characteristics (:CastPlot_Element-Characteristics)
+
+AnnotationAssertion(rdfs:comment :CastPlot_Element-Characteristics "A classification for the object property  for characters and plot element characteristics.")
+
 # Object Property: :Communication (:Communication)
 
 AnnotationAssertion(rdfs:comment :Communication "Communication is a central part of the novel's themes closely relating to addiction and trauma. Characters can range from being overly communicative to the point of saying nothing, literally saying nothing, or clearly articulating things in a concise way. This has been divided to incommunicative and communicative respectively.")
@@ -96,6 +100,10 @@ ObjectPropertyDomain(:Communication :The_Entertainment)
 ObjectPropertyDomain(:Communication :The_Incandenza_Family)
 ObjectPropertyRange(:Communication :Communicative)
 ObjectPropertyRange(:Communication :Incommunicative)
+
+# Object Property: :Family (:Family)
+
+AnnotationAssertion(rdfs:comment :Family "A classification for object property types to list familial relationships of the main characters.")
 
 # Object Property: :Free (:Free)
 
@@ -138,6 +146,7 @@ ObjectPropertyDomain(:hasBirthMother :The_Incandenza_Family)
 
 # Object Property: :hasBrother (:hasBrother)
 
+AnnotationAssertion(rdfs:comment :hasBrother "for characters who have a brother.")
 SubObjectPropertyOf(:hasBrother :Family)
 ObjectPropertyDomain(:hasBrother :The_Incandenza_Family)
 ObjectPropertyRange(:hasBrother :Hal_Incandenza)
@@ -157,6 +166,7 @@ ObjectPropertyDomain(:hasTrauma :Trauma)
 
 # Object Property: :hasfatalpleasure (:hasfatalpleasure)
 
+AnnotationAssertion(rdfs:comment :hasfatalpleasure "a key theme of the novel, how \"fatal pleasures\" act, and are enacted by, the characters and The Entertainment.")
 SubObjectPropertyOf(:hasfatalpleasure :CastPlot_Element-Characteristics)
 ObjectPropertyDomain(:hasfatalpleasure :Remy_Marathe)
 ObjectPropertyDomain(:hasfatalpleasure :The_Entertainment)
@@ -175,7 +185,7 @@ ObjectPropertyDomain(:isFatherTo :The_Incandenza_Family)
 
 # Object Property: :marriedto (:marriedto)
 
-AnnotationAssertion(rdfs:comment :marriedto "to develop familial connections.")
+AnnotationAssertion(rdfs:comment :marriedto "for characters married to one another.")
 SubObjectPropertyOf(:marriedto :Family)
 ObjectPropertyDomain(:marriedto :Avril_Incandenza)
 ObjectPropertyDomain(:marriedto :Dr._James_Orin_Incandenza)
@@ -191,6 +201,10 @@ ObjectPropertyDomain(:marriedto :Remy_Marathe)
 
 AnnotationAssertion(rdfs:comment :Addiction "Addiction plays a central role to the plot and characters, virtually everyone is addicted to something, however, some are in thrall to their desires whereas others are in eternal recovery from them.")
 SubClassOf(:Addiction :Themes)
+
+# Class: :Allusions (:Allusions)
+
+AnnotationAssertion(rdfs:comment :Allusions "A parent class of the listed literary allusions.")
 
 # Class: :Avril_Incandenza (:Avril_Incandenza)
 
@@ -223,6 +237,7 @@ SubClassOf(:Communicative :Communication)
 
 # Class: :Consumption (:Consumption)
 
+AnnotationAssertion(rdfs:comment :Consumption "A prevalent theme in the book, closely related to Addiction.")
 SubClassOf(:Consumption :Themes)
 
 # Class: :Don_Gately (:Don_Gately)
@@ -292,6 +307,7 @@ SubClassOf(:Hal_Incandenza_Thoughts :Hal_Incandenza)
 
 # Class: :Hamlet (:Hamlet)
 
+AnnotationAssertion(rdfs:comment :Hamlet "All allusions to Shakespeare's Hamlet.")
 SubClassOf(:Hamlet :Allusions)
 
 # Class: :Human_development (:Human_development)
@@ -379,6 +395,7 @@ SubClassOf(:Remy_Marathe_Thoughts :Remy_Marathe)
 
 # Class: :The_Brothers_Karamazov (:The_Brothers_Karamazov)
 
+AnnotationAssertion(rdfs:comment :The_Brothers_Karamazov "All allusions to Fyodor Dostoevsky's The Brothers Karamazov.")
 SubClassOf(:The_Brothers_Karamazov :Allusions)
 
 # Class: :The_Enfield_Tennis_Academy (:The_Enfield_Tennis_Academy)
@@ -398,6 +415,10 @@ EquivalentClasses(:The_Entertainment ObjectSomeValuesFrom(:hasfatalpleasure :In_
 # Class: :The_Incandenza_Family (:The_Incandenza_Family)
 
 AnnotationAssertion(rdfs:comment :The_Incandenza_Family "The family central whose father created The Entertainment and the rest who live around the Enfield Tennis Academy")
+
+# Class: :Themes (:Themes)
+
+AnnotationAssertion(rdfs:comment :Themes "A parent class of the listed themes.")
 
 # Class: :Trauma (:Trauma)
 
